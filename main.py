@@ -22,13 +22,7 @@ def take_command():
             if 'alexa' in command:
                 command = command.replace('alexa', '')
                 print(command)
-            elif 'time' in command:
-                time = datetime.datetime.now().strftime('%I:%M %p')
-                print(time)
-                talk('Current time is ' + time)
-            elif 'are you single' in command:
-                talk('No, I am Relationship with Harsh') 
-                
+           
     except:
         pass
     return command
@@ -39,6 +33,13 @@ def run_alexa():
         song = command1.replace('play', '')
         talk('playing some Songs')
         pywhatkit.playonyt(song)
+    elif 'time' in command1:
+                time = datetime.datetime.now().strftime('%I:%M %p')
+                print(time)
+                talk('Current time is ' + time)
+    elif 'single' in command1:
+                talk('No, I am Relationship with Harsh') 
+                
         
 run_alexa()
     
